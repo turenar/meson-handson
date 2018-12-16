@@ -1,8 +1,8 @@
-#include <iostream>
-#include "libperfectcalc/plus.hpp"
+#include <lua.hpp>
 
 int main() {
-    int lhs, rhs;
-    std::cin >> lhs >> rhs;
-    std::cout << plus(lhs, rhs) << std::endl;
+    lua_State* state = lua_open();
+    luaL_openlibs(state);
+    luaL_dostring(state, "print \"Hello world!\"");
+    lua_close(state);
 }
